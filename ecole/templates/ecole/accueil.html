@@ -1,0 +1,48 @@
+{% extends 'navigateur/base.html' %}
+
+{% load static %}
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+
+{% include 'navigateur/navbar.html' %}
+<!-- <h1>bonj</h1>
+<img src="{% static 'img/testimonial-1.jpg' %}" alt="">
+
+<form action="{% url 'inscription' %}" class="form-group" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="nom" name="nom">
+    <input type="email" placeholder="email" name="email">
+    <input type="number" placeholder="numero" name="number">
+    <input type="submit" value="enregistrer">
+</form> --><br><br>
+<div class="container">
+    <div>
+        <table class="table table-striped-columns">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Noms</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Numero</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+                <tbody>
+                    {% for ins in inscription %}
+                    <tr>
+                       <td>{{ins.pk}}</td>
+                        <td>{{ins.nom}}</td>
+                        <td>{{ins.email}}</td>
+                        <td>{{ins.numero}}</td>
+                        <td><a href="/update/{{ins.id}}" class="btn btn-small btn-primary">modifier</a> <a href="/delete/{{ins.id}}" class="btn btn-small btn-danger">supprimer</a></td>
+                       
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            
+        </table>
+    </div>
+</div>
+
+{% endblock %}

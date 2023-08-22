@@ -1,0 +1,31 @@
+{% extends 'navigateur/base.html' %}
+
+{% load static %}
+
+{% block title %}Page{% endblock %}
+
+{% block content %}
+
+<!-- <form action="" method="post">
+    {% csrf_token %}
+    <input type="text" value="{{obj.nom}}">
+    <input type="submit" name="nom">
+</form> -->
+<br><br>
+<form method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
+  </div>
+  <input type="submit" value="enregistrer">
+</form>
+
+
+
+
+{% endblock %}
